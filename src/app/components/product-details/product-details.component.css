@@ -1,0 +1,9 @@
+.grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+
+p {
+  width: clamp(50ch, 100%, 75ch);
+}

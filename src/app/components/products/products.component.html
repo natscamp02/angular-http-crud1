@@ -1,0 +1,21 @@
+<main>
+    <div class="container">
+        <h1 class="heading">All Products</h1>
+
+        <div class="grid">
+            <div class="card" *ngFor="let product of products">
+                <img [src]="product.imageUrl" [alt]="product.name">
+
+                <div>
+                    <h2>{{ product.name }}</h2>
+
+                    <span>{{ product.price | currency }}</span>
+
+                    <span>{{ product.quantity | number }}</span>
+
+                    <a [routerLink]="['/products', product.id]">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,31 @@
+<main>
+    <div class="container">
+        <div class="" *ngIf="!isLoading;else loading">
+            <div class="grid" *ngIf="product; else notFound">
+                <img [src]="product.imageUrl" [alt]="product.name">
+
+                <div class="relative">
+                    <h1 class="absolute bottom-4 left-8">{{product.name}}</h1>
+                    <span>{{product.price | currency}}</span>
+
+                    <h2>Description</h2>
+                    <p>{{product.description}}</p>
+
+                    <h2>In Stock</h2>
+                    <p>{{product.quantity | number}}</p>
+
+                    <a routerLink="/products/order/success">Order Now</a>
+                </div>
+            </div>
+
+            <ng-template #notFound>
+                <h1>Product not found. Try again later</h1>
+            </ng-template>
+        </div>
+
+        <ng-template #loading>
+            <span>Loading...</span>
+        </ng-template>
+    </div>
+
+</main>
