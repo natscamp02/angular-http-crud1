@@ -1,18 +1,25 @@
 <main>
     <div class="container">
         <div class="" *ngIf="!isLoading;else loading">
-            <div class="grid" *ngIf="product; else notFound">
+            <div class="details grid" *ngIf="product; else notFound">
                 <img [src]="product.imageUrl" [alt]="product.name">
 
-                <div class="relative">
-                    <h1 class="absolute bottom-4 left-8">{{product.name}}</h1>
-                    <span>{{product.price | currency}}</span>
+                <div class="content">
+                    <h1 class="">{{product.name}}</h1>
 
-                    <h2>Description</h2>
-                    <p>{{product.description}}</p>
+                    <div class="info">
+                        <span class="price">
+                            <i class='bx bxs-purchase-tag-alt'></i>
+                            {{product.price | currency}}
+                        </span>
 
-                    <h2>In Stock</h2>
-                    <p>{{product.quantity | number}}</p>
+                        <span class="quantity">
+                            <i class='bx bxs-dish'></i>
+                            {{product.quantity | number}}
+                        </span>
+                    </div>
+
+                    <p class="description">{{product.description}}</p>
 
                     <a class="btn" routerLink="/products/order/success">Order Now</a>
                 </div>

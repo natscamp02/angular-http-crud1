@@ -8,7 +8,7 @@ RESET - source: https://piccalil.li/blog/a-modern-css-reset
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -22,37 +22,37 @@ figure,
 blockquote,
 dl,
 dd {
-  margin: 0;
+    margin: 0;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
-  list-style: none;
+    list-style: none;
 }
 
 /* Set core root defaults */
 html:focus-within {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* Set core body defaults */
 body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+    text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
 img,
 picture {
-  max-width: 100%;
-  display: block;
+    max-width: 100%;
+    display: block;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -60,23 +60,23 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+    font: inherit;
 }
 
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
+    html:focus-within {
+        scroll-behavior: auto;
+    }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
 
 /* //////////////////////
@@ -85,7 +85,20 @@ select {
 */
 
 :root {
-  font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    color: #555;
+}
+
+main {
+    min-height: 100vh;
+    background-image: linear-gradient(
+        to bottom right,
+        #ffecd2 0%,
+        #fcb69f 100%
+    );
 }
 
 h1,
@@ -94,39 +107,43 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-}
-
-main {
-  min-height: 100vh;
+    color: #000;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 .container {
-  max-width: 1280px;
-  margin-inline: auto;
-  padding-inline: 3rem;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 3rem;
 }
 
 .btn {
-  background: #af1010;
-  border: none;
-  outline: none;
+    border-radius: 0.5em;
+    background: linear-gradient(to bottom right, #fcbb61 0%, #fc7d53 100%);
+    border: none;
+    outline: none;
 
-  color: #fff;
+    color: #fff;
 
-  padding: 0.75rem 1.25rem;
+    padding: 0.5em 1.125em;
 
-  display: inline-block;
+    display: inline-block;
 
-  cursor: pointer;
+    transition: opacity 0.3s ease;
+
+    cursor: pointer;
+}
+
+.btn:where(:hover, :focus) {
+    opacity: 0.85;
 }
